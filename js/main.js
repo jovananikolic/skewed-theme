@@ -14,9 +14,72 @@ $(document).ready(function () {
             scrollTop: $($.attr(this, 'href')).offset().top
         }, 1250);
     });
-    
-    if($('.bxslider').length > 0){
+
+    if ($('.bxslider').length > 0) {
         $('.lead-slider').bxSlider();
+    }
+
+    function animation() {
+        var windowHeight = $(window).height();
+        var scroll = $(window).scrollTop();
+        $('.animation').each(function () {
+            var pozicija = $(this).offset().top;
+            var animacija = $(this).attr('data-animation');
+            if (pozicija < scroll + windowHeight - 100) {
+                $(this).addClass(animacija);
+            }
+        });
+    }
+
+    animation();
+
+    $(window).scroll(function () {
+        animation();
+    });
+
+    if ($('.owl-carousel').length > 0) {
+        $('.team-slider').owlCarousel({
+            loop: true,
+            margin: 10,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                  items: 2  
+                },
+                768: {
+                    items: 3
+                },
+                992: {
+                    items: 4
+                }
+            }
+        });
+        
+        $('.portfolio-slider').owlCarousel({
+            loop: true,
+            margin: 10,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                  items: 2  
+                },
+                768: {
+                    items: 3
+                },
+                992: {
+                    items: 4
+                },
+                1200: {
+                    items: 5
+                }
+            }
+        });
     }
 
 });
