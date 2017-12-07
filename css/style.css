@@ -186,7 +186,7 @@ header{
 .newsletter .form-control{
     border-radius: 0;
     border-color:#fff;
-    background: transparent;
+    background: transparent no-repeat right center;
     color:#fff;
 }
 
@@ -280,6 +280,3 @@ header{
     height: 100%;
 }
 
-/*.testimonial-slider li{
-    padding: 0 0 90px 0;
-}*/
