@@ -14,5 +14,9 @@ $(document).ready(function () {
             scrollTop: $($.attr(this, 'href')).offset().top
         }, 1250);
     });
+    
+    if($('.bxslider').length > 0){
+        $('.lead-slider').bxSlider();
+    }
 
 });
